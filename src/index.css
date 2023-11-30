@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(5, 35, 35);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  font-family: 'Courier New';
+}
+
+.container {
+  background: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);  min-width: 30rem;
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  padding: 20px;
+  border: 3px solid black;
+}
+
+.container > * {
+  width: 100%;
+}
+h1 {
+  text-decoration: underline;
+}
+.firstRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: radial-gradient(circle at 10% 20%, rgb(215, 223, 252) 0%, rgb(255, 255, 255) 0%, rgb(215, 223, 252) 84%);
+  border-radius: 30px;
+  border: 1px solid black;
+}
+
+ul {
+  list-style: none;
+  
+}
+
+li {
+  font-size: 2em;
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgba(255, 255, 255, 0.836);
+  padding: 5px;
+  border: 1px solid black
+}
+
+li:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.name {
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+span {
+  margin-left: 1em;
+}
+
+.container2 {
+  min-width: 15rem;
+  min-height: 10rem;
+  background: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+  padding: 1em;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  margin-top: 1rem;
+}
+
+input {
+  border-radius: 10px;
+  border-width: 1px;
+  margin-left: 2em;
+  margin-right: 1em;
+  padding-left: 1em;
+}
+.buttons {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-evenly;
+}
+button {
+  width: 40%;
+  border-radius: 15px;
+  border-width: 1px;
+  padding: 0.3em;
+  cursor: pointer;
+}
+
+.icon {
+  cursor: pointer;
+}

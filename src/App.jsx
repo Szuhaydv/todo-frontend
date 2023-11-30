@@ -1,0 +1,19 @@
+import React, {useState} from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import AddTodo from './pages/AddTodo.jsx'
+import EditTodo from './pages/EditTodo.jsx'
+
+function App() {
+  const [todos, setTodos] = useState([])
+  const [loading, setLoading] = useState(false)
+  return (
+      <Routes>
+        <Route path="/" element={<Home value={{todos, setTodos, loading, setLoading}}/>} />
+        <Route path="/add" element={<AddTodo value={{todos, setTodos, loading, setLoading}}/>} />
+        <Route path="/:id" element={<EditTodo value={{todos, setTodos, loading, setLoading}}/>} />
+      </Routes>
+  );
+}
+
+export default App
