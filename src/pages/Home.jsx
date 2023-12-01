@@ -6,10 +6,6 @@ import { FaTrashCan } from "react-icons/fa6";
 import { FaRegEdit } from "react-icons/fa";
 import { CiSquarePlus } from "react-icons/ci";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
-
-// const handleEdit = () => {
-
-// }
   
   const Home = (props) => {
     const loading = props.value.loading
@@ -20,7 +16,7 @@ import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
     useEffect(() => {
       setLoading(true)
       axios
-      .get('http://localhost:5555/todos')
+      .get('https://todo-backend1-0rrs.onrender.com/todos')
       .then((res) => {
         setTodos(res.data.data)
         setLoading(false)
@@ -33,7 +29,7 @@ import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
     const handleDelete = (id) => {
       setLoading(true)
           axios
-            .delete(`http://localhost:5555/todos/${id}`)
+            .delete(`https://todo-backend1-0rrs.onrender.com/todos/${id}`)
             .then(() => {
               setTodos(todos.filter((todo) => todo._id != id))
               setLoading(false)
@@ -55,7 +51,7 @@ import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
       }
       setLoading(true)
           axios
-            .put(`http://localhost:5555/todos/${todo._id}`, updatedTodo)
+            .put(`https://todo-backend1-0rrs.onrender.com/todos/${todo._id}`, updatedTodo)
             .then(() => {
               setLoading(false)
             })

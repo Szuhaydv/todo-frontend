@@ -11,7 +11,7 @@ const EditTodo = (props) => {
   useEffect(() => {
     setLoading(true)
     axios
-        .get(`http://localhost:5555/todos/${id}`)
+        .get(`https://todo-backend1-0rrs.onrender.com/${id}`)
         .then((res) => {
           setName(res.data.name)
           setStatus(res.data.status)
@@ -31,7 +31,7 @@ const EditTodo = (props) => {
       }
       setLoading(true)
       axios
-        .put(`http://localhost:5555/todos/${id}`, editedTodo)
+        .put(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, editedTodo)
         .then(() => {
           setLoading(false)
           navigate("/")

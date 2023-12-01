@@ -19,7 +19,7 @@ const AddTodo = (props) => {
       }
       setLoading(true)
       axios
-        .post(`http://localhost:5555/todos`, newTodo)
+        .post(`https://todo-backend1-0rrs.onrender.com/todos`, newTodo)
         .then(() => {
           setTodos(...todos, newTodo)
           setLoading(false)
