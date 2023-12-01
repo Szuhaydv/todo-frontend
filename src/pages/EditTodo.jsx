@@ -37,9 +37,8 @@ const EditTodo = (props) => {
         .then(() => {
           let editedElement = todos.filter(item => item._id === id)
           let index = todos.indexOf(editedElement[0])
-          const newArray = todos.splice(index, 1, editedTodo);
-          console.log(newArray);
-          setTodos(newArray)
+          todos.splice(index, 1, editedTodo)
+          setTodos(todos)
           setLoading(false)
           navigate("/")
         })
