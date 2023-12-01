@@ -4,6 +4,8 @@ import axios from 'axios'
 
 const EditTodo = (props) => {
   const setLoading = props.value.setLoading
+  const todos = props.value.todos
+  const setTodos = props.value.setTodos
   const [name, setName] = useState("")
   const [status, setStatus] = useState(false)
   const navigate = useNavigate()
@@ -33,6 +35,10 @@ const EditTodo = (props) => {
       axios
         .put(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, editedTodo)
         .then(() => {
+          let editedElement = todos.filter(item => item._id === id)
+          let index = todos.indexOf(editedElement[0])
+          const newArray = todos.splice(index, 1, editedTodo);
+          setTodos(newArray)
           setLoading(false)
           navigate("/")
         })
@@ -46,7 +52,7 @@ const EditTodo = (props) => {
     navigate("/")
   }
   const handleCancel = () => {
-    navigate("https://todo-frontend-q9k5.onrender.com")
+    navigate("/")
   }
   return (
     <div className='container2'>
