@@ -34,7 +34,7 @@ const AddTodo = (props) => {
     navigate("/")
   }
   const handleCancel = () => {
-    navigate("/")
+    navigate("https://todo-backend1-0rrs.onrender.com")
   }
   return (
     <div className='container2'>
