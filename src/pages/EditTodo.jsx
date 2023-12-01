@@ -11,7 +11,7 @@ const EditTodo = (props) => {
   useEffect(() => {
     setLoading(true)
     axios
-        .get(`https://todo-backend1-0rrs.onrender.com/${id}`)
+        .get(`https://todo-backend1-0rrs.onrender.com/todos/${id}`)
         .then((res) => {
           setName(res.data.name)
           setStatus(res.data.status)
