@@ -43,10 +43,10 @@ const EditTodo = (props) => {
     } else {
       alert("Give a name to the todo!")
     }
-    navigate("/")
+    navigate("https://todo-backend1-0rrs.onrender.com")
   }
   const handleCancel = () => {
-    navigate("/")
+    navigate("https://todo-backend1-0rrs.onrender.com")
   }
   return (
     <div className='container2'>
