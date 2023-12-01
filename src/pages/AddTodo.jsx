@@ -31,10 +31,10 @@ const AddTodo = (props) => {
     } else {
       alert("Give a name to the todo!")
     }
-    navigate("/")
+    navigate("https://todo-frontend-q9k5.onrender.com")
   }
   const handleCancel = () => {
-    navigate("/")
+    navigate("https://todo-frontend-q9k5.onrender.com")
   }
   return (
     <div className='container2'>

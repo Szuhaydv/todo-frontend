@@ -46,7 +46,7 @@ const EditTodo = (props) => {
     navigate("/")
   }
   const handleCancel = () => {
-    navigate("/")
+    navigate("https://todo-frontend-q9k5.onrender.com")
   }
   return (
     <div className='container2'>
