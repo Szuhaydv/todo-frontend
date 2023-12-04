@@ -40,7 +40,7 @@ const EditTodo = (props) => {
           todos.splice(index, 1, editedTodo)
           setTodos(todos)
           setLoading(false)
-          navigate("/")
+          navigate("/home")
         })
         .catch((err) => {
           console.log(err)
@@ -49,10 +49,10 @@ const EditTodo = (props) => {
     } else {
       alert("Give a name to the todo!")
     }
-    navigate("/")
+    navigate("/home")
   }
   const handleCancel = () => {
-    navigate("/")
+    navigate("/home")
   }
   return (
     <div className='background'>
