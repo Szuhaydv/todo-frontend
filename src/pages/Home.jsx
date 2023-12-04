@@ -29,7 +29,7 @@ import { Link, useNavigate } from 'react-router-dom'
     const handleDelete = (id) => {
       setLoading(true)
           axios
-            .delete(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, { withCredentials: true })
+            .delete(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, { withCredentials: true, credentials: 'include' })
             .then(() => {
               setTodos(todos.filter((todo) => todo._id != id))
               setLoading(false)
@@ -51,7 +51,7 @@ import { Link, useNavigate } from 'react-router-dom'
       }
       setLoading(true)
           axios
-            .put(`https://todo-backend1-0rrs.onrender.com/todos/${todo._id}`, updatedTodo, { withCredentials: true })
+            .put(`https://todo-backend1-0rrs.onrender.com/todos/${todo._id}`, updatedTodo, { withCredentials: true, credentials: 'include' })
             .then(() => {
               setLoading(false)
             })

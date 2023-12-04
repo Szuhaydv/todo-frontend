@@ -13,7 +13,7 @@ const EditTodo = (props) => {
   useEffect(() => {
     setLoading(true)
     axios
-        .get(`https://todo-backend1-0rrs.onrender.com/todos/${id}`)
+        .get(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, {withCredentials: true, credentials: 'include'})
         .then((res) => {
           setName(res.data.name)
           setStatus(res.data.status)
@@ -33,7 +33,7 @@ const EditTodo = (props) => {
       }
       setLoading(true)
       axios
-        .put(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, editedTodo, { withCredentials: true })
+        .put(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, editedTodo, { withCredentials: true, credentials: 'include' })
         .then(() => {
           let editedElement = todos.filter(item => item._id === id)
           let index = todos.indexOf(editedElement[0])

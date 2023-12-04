@@ -16,7 +16,7 @@ const Login = (props) => {
         password: password
       }
       axios
-        .post(`https://todo-backend1-0rrs.onrender.com/login`, loginCred, { withCredentials: true })
+        .post(`https://todo-backend1-0rrs.onrender.com/login`, loginCred, { withCredentials: true, credentials: 'include' })
             .then(() => {
               setLoading(false)
               navigate("/")
