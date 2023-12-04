@@ -12,8 +12,8 @@ const Login = (props) => {
   const handleLogin = () => {
     if (username && password) {
       const loginCred = {
-        username: username,
-        password: password
+        username,
+        password
       }
       axios
         .post(`https://todo-backend1-0rrs.onrender.com/login`, loginCred, { withCredentials: true, credentials: 'include' })
