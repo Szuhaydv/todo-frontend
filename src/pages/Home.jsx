@@ -16,7 +16,7 @@ import { Link, useNavigate } from 'react-router-dom'
     useEffect(() => {
       setLoading(true)
       axios
-      .get('https://todo-backend1-0rrs.onrender.com/todos', { withCredentials: true })
+      .get('https://todo-backend1-0rrs.onrender.com/todos', { withCredentials: true, credentials: 'include' })
       .then((res) => {
         setTodos(res.data.data)
         setLoading(false)
