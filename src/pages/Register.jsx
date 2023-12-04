@@ -18,7 +18,7 @@ const Register = () => {
         <div><input type="password"/></div>
       </div>
       <button className='btn mb-3'>Register</button>
-      <p>Already signed up? <a href="">Log in!</a></p>
+      <p>Already signed up? <a href="/login">Log in!</a></p>
     </div>
   </div>
   )

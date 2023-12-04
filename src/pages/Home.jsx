@@ -4,11 +4,13 @@ import Spinner from '../components/Spinner'
 import { Link, useNavigate } from 'react-router-dom'
   
   const Home = (props) => {
+    const navigate = useNavigate()
+    console.log(document.cookie)
     const loading = props.value.loading
     const setLoading = props.value.setLoading
     const todos = props.value.todos
     const setTodos = props.value.setTodos
-    const navigate = useNavigate()
+    
     useEffect(() => {
       setLoading(true)
       axios
@@ -81,7 +83,7 @@ import { Link, useNavigate } from 'react-router-dom'
               }) : <p> No todos found </p>
             }
           </ul>
-          <button onClick={() => navigate("/login")} className='btn'>
+          <button onClick={() => navigate("/add")} className='btn'>
             + New Task
           </button>
         </div>
