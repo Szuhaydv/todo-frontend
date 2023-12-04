@@ -24,6 +24,7 @@ const AddTodo = (props) => {
           const newArray = [...todos, newTodo]
           setTodos(newArray)
           setLoading(false)
+          navigate("/")
         })
         .catch((err) => {
           console.log(err)
@@ -31,27 +32,30 @@ const AddTodo = (props) => {
         })
     } else {
       alert("Give a name to the todo!")
-    }
-    navigate("/")
+    }   
   }
   const handleCancel = () => {
     navigate("/")
   }
   return (
-    <div className='container2'>
-      <form onSubmit={handleSubmit}>
-        <label>
-          To-Do:
-          <input type="text" value={name} autoFocus="autofocus" onChange={(e) => setName(e.target.value)}/>
-        </label>
-        <label>
-          Status:
-          <input type="checkbox" value={status} onChange={(e) => setStatus(e.target.checked)} />
+    <div className='background'>
+      <form className="d-flex flex-column align-items-center shadow position-absolute top-50 start-50 translate-middle p-3 pt-4 bg-white" onSubmit={handleSubmit}>
+        <div className='d-flex w-100 mb-3'>
+          <label>
+            To-Do:
+          </label>
+            <input type="text" value={name} autoFocus="autofocus" onChange={(e) => setName(e.target.value)}/>
+        </div>
+        <div className='w-100 mb-3'>
+          <label>
+            Status:
+          </label>
+            <input className='mx-3 mt-1' type="checkbox" value={status} onChange={(e) => setStatus(e.target.checked)} />
           {status ? "(completed)" : "(unfinished)"}
-        </label>
-        <div className="buttons">
-          <button type="submit">Add</button>
-          <button onClick={handleCancel}>Cancel</button>
+        </div>
+        <div className='d-flex justify-content-evenly w-75'>
+          <button className="btn" type="submit">Add</button>
+          <button className="btn" onClick={handleCancel}>Cancel</button>
         </div>        
       </form>
     </div>

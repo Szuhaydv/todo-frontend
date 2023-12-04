@@ -55,23 +55,30 @@ const EditTodo = (props) => {
     navigate("/")
   }
   return (
-    <div className='container2'>
-      <form onSubmit={handleEdit}>
-        <label>
-          To-Do:
+    <div className='background'>
+      <form className="d-flex flex-column align-items-center shadow position-absolute top-50 start-50 translate-middle p-3 pt-4 bg-white" onSubmit={handleEdit}>
+        <div className='d-flex w-100 mb-3'>
+          <label>
+            To-Do:
+          </label>
           <input type="text" autoFocus="autofocus" value={name} onChange={(e) => setName(e.target.value)}/>
-        </label>
-        <label>
-          Status:
-          <input type="checkbox" checked={status} onChange={(e) => setStatus(e.target.checked)} />
+        </div>
+        <div className='w-100 mb-3'>
+          <label>
+            Status:
+          </label>
+          <input className='mx-3 mt-1' type="checkbox" checked={status} onChange={(e) => setStatus(e.target.checked)} />
           {status ? "(completed)" : "(unfinished)"}
-        </label>
-        <div className="buttons">
-          <button type="submit">Edit</button>
-          <button onClick={handleCancel}>Cancel</button>
+        </div>
+        
+        
+        <div className="d-flex justify-content-evenly w-75">
+          <button className='btn' type="submit">Edit</button>
+          <button className='btn' onClick={handleCancel}>Cancel</button>
         </div>        
       </form>
     </div>
+    
   )
 }
 

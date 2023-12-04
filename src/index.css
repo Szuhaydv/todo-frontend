@@ -1,4 +1,6 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+/* body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -105,4 +107,37 @@ button {
 
 .icon {
   cursor: pointer;
+} */
+
+
+body {
+  font-family: 'Itim';
+}
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-color: #E3E9FF;
+}
+
+label {
+  width: 100px;
+  margin-top: 3px;
+}
+
+input {
+  background-color: #E3E9FF;
+}
+
+button {
+  background-color: #AF7EEB !important;
+  color: white !important;
+}
+
+.firstRow {
+  background-color: #AF7EEB !important;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
 }

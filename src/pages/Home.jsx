@@ -2,10 +2,6 @@ import React, {useContext, useEffect, useState} from 'react'
 import axios from 'axios'
 import Spinner from '../components/Spinner'
 import { Link, useNavigate } from 'react-router-dom'
-import { FaTrashCan } from "react-icons/fa6";
-import { FaRegEdit } from "react-icons/fa";
-import { CiSquarePlus } from "react-icons/ci";
-import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
   
   const Home = (props) => {
     const loading = props.value.loading
@@ -61,32 +57,35 @@ import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
             })
     }
     return (
-    <div className="container">
-      <div className="firstRow">
-        <h1>My To-Do List</h1>
-        <Link to={{pathname: '/add'}}>
-          <CiSquarePlus size={64} />
-        </Link>
+    <div className="background">
+      <div className="d-flex flex-column align-items-center position-absolute top-50 start-50 translate-middle">
+        <div className="firstRow d-flex mb-3 px-3 py-1">
+            <h1 className='text-light'>My To-Do List</h1>
+        </div>
+        <div className="bg-white w-100 shadow p-2">
+          <ul> 
+            {loading ? <Spinner /> :
+              todos && todos.length ? todos.map((todo, index) => {
+                return(
+                  <li key={index} className='position-relative w-100 d-flex'>
+                    {todo.status ? <i onClick={() => handleCheck(todo)} className="bi bi-record-circle mx-2"></i> : <i onClick={() => handleCheck(todo)}className="bi bi-circle mx-2"></i>}
+                    <p>
+                      {todo.name}
+                    </p>
+                    <div className='position-absolute end-0 mx-2 d-flex'>
+                        <i onClick={(e) => handleEdit(todo._id)} className="bi bi-pencil-square"></i>
+                        <i onClick={(e) => handleDelete(todo._id)} className="bi bi-trash3-fill px-1"></i>
+                    </div>
+                  </li>
+                )
+              }) : <p> No todos found </p>
+            }
+          </ul>
+          <button onClick={() => navigate("/add")} className='btn'>
+            + New Task
+          </button>
+        </div>
       </div>
-      <ul>
-      {loading ? <Spinner /> :
-        todos && todos.length ? todos.map((todo, index) => {
-          return(
-            <li key={index}>
-              <div className="name">
-                {todo.status ? <MdCheckBox onClick={() => handleCheck(todo)} className='icon' /> : <MdCheckBoxOutlineBlank onClick={() => handleCheck(todo)} className='icon' />}
-                <span>
-                  {todo.name}
-                </span>
-              </div>
-              <FaRegEdit className='icon' onClick={(e) => handleEdit(todo._id)}/>
-              <FaTrashCan className='icon' onClick={(e) => handleDelete(todo._id)}/>
-          </li>
-          ) 
-        }) : <p> No todos found </p>
-      }
-      </ul>
-      
     </div>
   )
 }
