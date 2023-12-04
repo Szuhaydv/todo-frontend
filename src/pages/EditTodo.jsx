@@ -33,7 +33,7 @@ const EditTodo = (props) => {
       }
       setLoading(true)
       axios
-        .put(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, editedTodo)
+        .put(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, editedTodo, { withCredentials: true })
         .then(() => {
           let editedElement = todos.filter(item => item._id === id)
           let index = todos.indexOf(editedElement[0])

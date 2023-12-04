@@ -19,7 +19,7 @@ const AddTodo = (props) => {
       }
       setLoading(true)
       axios
-        .post(`https://todo-backend1-0rrs.onrender.com/todos`, newTodo)
+        .post(`https://todo-backend1-0rrs.onrender.com/todos`, newTodo, { withCredentials: true })
         .then(() => {
           const newArray = [...todos, newTodo]
           setTodos(newArray)
