@@ -19,7 +19,7 @@ const Login = (props) => {
         .post(`https://todo-backend1-0rrs.onrender.com/login`, loginCred, { withCredentials: true })
             .then(() => {
               setLoading(false)
-              navigate("/")
+              navigate("https://todo-frontend-q9k5.onrender.com")
             })
             .catch((err) => {
               console.log(err)
