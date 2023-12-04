@@ -81,7 +81,7 @@ import { Link, useNavigate } from 'react-router-dom'
               }) : <p> No todos found </p>
             }
           </ul>
-          <button onClick={() => navigate("/add")} className='btn'>
+          <button onClick={() => navigate("/login")} className='btn'>
             + New Task
           </button>
         </div>
