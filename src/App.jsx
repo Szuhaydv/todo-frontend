@@ -11,9 +11,9 @@ function App() {
   const [loading, setLoading] = useState(false)
   return (
       <Routes>
-        <Route path="/login" element={<Login value={{loading,setLoading}}/>} />
+        <Route path="/" element={<Login value={{loading,setLoading}}/>} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Home value={{todos, setTodos, loading, setLoading}}/>} />
+        <Route path="/home" element={<Home value={{todos, setTodos, loading, setLoading}}/>} />
         <Route path="/add" element={<AddTodo value={{todos, setTodos, loading, setLoading}}/>} />
         <Route path="/:id" element={<EditTodo value={{todos, setTodos, loading, setLoading}}/>} />
       </Routes>

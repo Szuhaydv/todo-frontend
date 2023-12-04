@@ -5,10 +5,6 @@ import { Link, useNavigate } from 'react-router-dom'
   
   const Home = (props) => {
     const navigate = useNavigate()
-    if (!document.cookie) {
-      console.log(document.cookie)
-      navigate("/login")
-    }
     const loading = props.value.loading
     const setLoading = props.value.setLoading
     const todos = props.value.todos
