@@ -13,7 +13,7 @@ import { Link, useNavigate } from 'react-router-dom'
     useEffect(() => {
       setLoading(true)
       axios
-      .get('https://todo-backend1-0rrs.onrender.com/todos', { withCredentials: true, credentials: 'include' })
+      .get('https://todo-backend1-0rrs.onrender.com/todos', { withCredentials: true })
       .then((res) => {
         setTodos(res.data.data)
         setLoading(false)
@@ -26,7 +26,7 @@ import { Link, useNavigate } from 'react-router-dom'
     const handleDelete = (id) => {
       setLoading(true)
           axios
-            .delete(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, { withCredentials: true, credentials: 'include' })
+            .delete(`https://todo-backend1-0rrs.onrender.com/todos/${id}`, { withCredentials: true })
             .then(() => {
               setTodos(todos.filter((todo) => todo._id != id))
               setLoading(false)
