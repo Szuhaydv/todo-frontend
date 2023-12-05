@@ -19,7 +19,7 @@ const Register = () => {
         <div><input type="password"/></div>
       </div>
       <button className='btn mb-3'>Register</button>
-      <p>Already signed up? <Link to="/login">Log in!</Link></p>
+      <p>Already signed up? <Link to="/">Log in!</Link></p>
     </div>
   </div>
   )
