@@ -11,6 +11,7 @@ const Login = (props) => {
   const setLoading = props.value.setLoading
   const handleLogin = () => {
     if (username && password) {
+      console.log(document.cookie)
       const loginCred = {
         username,
         password
