@@ -41,7 +41,7 @@ const Login = (props) => {
         <div><input onChange={(e) => setPassword(e.target.value)} type="password"/></div>
       </div>
       <button onClick={handleLogin} className='btn mb-3'>Log in</button>
-      <p>Haven't registered yet? <a href="/register">Register!</a></p>
+      <p>Haven't registered yet? <Link to="/register">Register!</Link></p>
     </div>
   </div>
   )
