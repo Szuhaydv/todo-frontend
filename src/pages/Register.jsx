@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 
@@ -9,6 +9,7 @@ const Register = (props) => {
   const [password2, setPassword2] = useState("")
   const loading = props.value.loading
   const setLoading = props.value.setLoading
+  const navigate = useNavigate()
   const handleRegister = (e) => {
     e.preventDefault()
     if (username && password && password2 && password == password2) {
