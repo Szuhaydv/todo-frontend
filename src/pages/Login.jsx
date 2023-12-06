@@ -31,7 +31,7 @@ const Login = (props) => {
   }
   return (
   <div className='background'>
-    <form onSubmit={handleLogin} className="d-flex flex-column align-items-center shadow position-absolute top-50 start-50 translate-middle pt-5 px-4 bg-white">
+    <form onSubmit={() => handleLogin()} className="d-flex flex-column align-items-center shadow position-absolute top-50 start-50 translate-middle pt-5 px-4 bg-white">
       <div className='d-flex'>
         <label>Username:</label>
         <input onChange={(e) => setUsername(e.target.value)} type="text" />
