@@ -9,7 +9,8 @@ const Register = (props) => {
   const [password2, setPassword2] = useState("")
   const loading = props.value.loading
   const setLoading = props.value.setLoading
-  const handleRegister = () => {
+  const handleRegister = (e) => {
+    e.preventDefault()
     if (username && password && password2 && password == password2) {
       const registerCred = {
         username,
