@@ -60,9 +60,10 @@ import { Link, useNavigate } from 'react-router-dom'
     const handleLogout = () => {
       setLoading(true)
       axios
-        .get('https://todo-backend1-0rrs.onrender.com/logout')
+        .get('https://todo-backend1-0rrs.onrender.com/logout', { withCredentials: true, credentials: 'include' })
         .then(() => {
           setLoading(false)
+          navigate("/")
         })
         .catch((err) => {
           console.log(err)
