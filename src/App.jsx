@@ -12,7 +12,7 @@ function App() {
   return (
       <Routes>
         <Route path="/" element={<Login value={{loading,setLoading}}/>} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register value={{loading,setLoading}}/>} />
         <Route path="/home" element={<Home value={{todos, setTodos, loading, setLoading}}/>} />
         <Route path="/add" element={<AddTodo value={{todos, setTodos, loading, setLoading}}/>} />
         <Route path="/:id" element={<EditTodo value={{todos, setTodos, loading, setLoading}}/>} />

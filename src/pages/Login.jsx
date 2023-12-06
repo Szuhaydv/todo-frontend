@@ -11,7 +11,6 @@ const Login = (props) => {
   const setLoading = props.value.setLoading
   const handleLogin = () => {
     if (username && password) {
-      console.log("HELKHALK")
       const loginCred = {
         username,
         password
@@ -32,18 +31,18 @@ const Login = (props) => {
   }
   return (
   <div className='background'>
-    <div className="d-flex flex-column align-items-center shadow position-absolute top-50 start-50 translate-middle pt-5 px-4 bg-white">
+    <form onSubmit={handleLogin} className="d-flex flex-column align-items-center shadow position-absolute top-50 start-50 translate-middle pt-5 px-4 bg-white">
       <div className='d-flex'>
         <label>Username:</label>
         <input onChange={(e) => setUsername(e.target.value)} type="text" />
       </div>
       <div className='d-flex my-4'>
         <label>Password:</label>
-        <div><input onChange={(e) => setPassword(e.target.value)} type="password"/></div>
+        <input onChange={(e) => setPassword(e.target.value)} type="password"/>
       </div>
-      <button onClick={handleLogin} className='btn mb-3'>Log in</button>
+      <button type='submit' className='btn mb-3'>Log in</button>
       <p>Haven't registered yet? <Link to="/register">Register!</Link></p>
-    </div>
+    </form>
   </div>
   )
 }

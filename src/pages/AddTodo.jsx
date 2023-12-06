@@ -24,7 +24,7 @@ const AddTodo = (props) => {
           const newArray = [...todos, newTodo]
           setTodos(newArray)
           setLoading(false)
-          navigate("/")
+          navigate("/home")
         })
         .catch((err) => {
           console.log(err)
@@ -35,7 +35,7 @@ const AddTodo = (props) => {
     }   
   }
   const handleCancel = () => {
-    navigate("/")
+    navigate("/home")
   }
   return (
     <div className='background'>
@@ -56,7 +56,7 @@ const AddTodo = (props) => {
         <div className='d-flex justify-content-evenly w-75'>
           <button className="btn" type="submit">Add</button>
           <button className="btn" onClick={handleCancel}>Cancel</button>
-        </div>        
+        </div>
       </form>
     </div>
   )
