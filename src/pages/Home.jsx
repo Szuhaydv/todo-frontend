@@ -86,7 +86,7 @@ import { Link, useNavigate } from 'react-router-dom'
               todos && todos.length ? todos.map((todo, index) => {
                 return(
                   <li key={index} className='position-relative w-100 d-flex'>
-                    {todo.status ? <i onClick={() => handleCheck(todo)} className="bi bi-record-circle m  x-2"></i> : <i onClick={() => handleCheck(todo)}className="bi bi-circle mx-2"></i>}
+                    {todo.status ? <i onClick={() => handleCheck(todo)} className="bi bi-record-circle mx-2"></i> : <i onClick={() => handleCheck(todo)}className="bi bi-circle mx-2"></i>}
                     <div className='task-name'>
                       <p className='textp'>
                       {todo.name}
