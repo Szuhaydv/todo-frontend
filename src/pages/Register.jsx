@@ -19,7 +19,7 @@ const Register = (props) => {
         .post(`https://todo-backend1-0rrs.onrender.com/register`, registerCred, { withCredentials: true, crossDomain: true, credentials: "include" })
             .then(() => {
               setLoading(false)
-              navigate("/home")
+              navigate("/")
             })
             .catch((err) => {
               console.log(err)
