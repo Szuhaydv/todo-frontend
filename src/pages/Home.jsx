@@ -72,7 +72,7 @@ import { Link, useNavigate } from 'react-router-dom'
     }
     return (
     <div className="background position-relative">
-      <div onClick={handleLogout} className='log-out position-absolute d-flex justify-content-center align-items-center m-2'>  
+      <div onClick={() => handleLogout()} className='log-out position-absolute d-flex justify-content-center align-items-center m-2'>  
         <i class="bi h3 bi-box-arrow-right mx-2"></i>
         <p className='mx-2'>Log out</p>
       </div>
